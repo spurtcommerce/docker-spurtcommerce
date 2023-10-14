@@ -1,0 +1,49 @@
+services:
+
+  spurtcommerce-api:
+    container_name: spurtcommerce-api-app
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    image: spurtcommerce/marketplace-api:4.8.2
+    env_file:
+      - ./config/.env.dev
+    ports:
+      - 8000:8000
+      - 4001:4001
+
+  mysql:
+    container_name: mysql-database
+    image: spurtcommerce/database:4.8.2
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: "marketplace_482"
+      MYSQL_ROOT_PASSWORD: "picco123$"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          'mysqladmin',
+          'ping',
+          '-h',
+          '127.0.0.1',
+          '-P',
+          '3306',
+          '-u',
+          'root',
+          '-p$picco123$'
+        ]
+      timeout: 20s
+      retries: 15
+    ports:
+      - 3307:3306
+  
+  web-ui:
+    container_name: spurtcommerce-web-ui
+    image: spurtcommerce/web-ui:4.8.2
+    depends_on:
+      - spurtcommerce-api
+    ports:
+      - 3000:80
