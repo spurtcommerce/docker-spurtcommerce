@@ -4,22 +4,28 @@ This is the official repository of Spurtcommerce. Using these Docker Images, you
 By following these two simple commands, you can quickly launch Spurtcommerce in your local server. 
 <br>
 
+Additionally, you should have <code> docker </code> and <code> docker-compose </code> installed on your system.
+
 If you have not yet installed Docker in your local server, then follow this first step. <br><br>
 
-<code> $ sudo snap install docker </code><br>
+<pre><code> $ sudo snap install docker </code></pre>
+  
+<h3>Step 1 :  </h3>
 
-<br>
+<pre><code> $ git clone https://github.com/spurtcommerce/docker-spurtcommerce.git </code></pre><br>
 
 Having already built the Docker images you can run docker compose without the --build flag.
 
-<br>
-<code> $ sudo docker compose up </code>
+<h3>Step 2 : </h3>
+<pre><code> $ sudo docker compose up </code></pre>
 <br>
 
 
 <h2> Spurtcommerce port </h2>
 Your local Spurtcommerce setup is now running with each of the services occupying the following ports:
-<br><table>
+<br><br>
+
+<table>
 <thead>
 <tr>
 <th align="center">Parameter</th>
@@ -36,14 +42,22 @@ Your local Spurtcommerce setup is now running with each of the services occupyin
 <td>The port for the spurtcommerce Ui</td>
 </tr>
 
+<tr>
+<td align="center"><code>-p 400</code></td>
+<td>The port for the spurtcommerce Ui</td>
+</tr>
 
+<tr>
+<td align="center"><code>-p 400</code></td>
+<td>The port for the spurtcommerce Ui</td>
+</tr>
 </tbody>
 </table>
 
 Then SpurtCommerce Is Ready On localhost:{your-port} or default localhost/(hostname)
 
 
-<h2>Avilable Images</h2><br>
+<h2>Avilable Images</h2>
 
 Spurtcommerce maintains multiple build images for testing new development as well as supporting legacy builds. Each image uses a different version of Ubuntu Linux, with a slightly different list of included language and software versions.
 <br>The following image is currently available:
