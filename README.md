@@ -1,39 +1,51 @@
-Spurtcommerce with Docker Deployment
+<h2>Overview</h2>
 
-------------------------------------------------------------------------------
+<h2>Start Spurtcommerce with Docker Compose</h2>
 
-Requirements
+<code> $ sudo snap install docker </code>
 
-To use Docker with Spurtcommerce, you should have docker and docker-compose installed on your system by running the following command..
+<code> $ sudo docker compose up </code>
 
-Step: 1
+Wait for few mins for application to setup... 
 
-$ sudo snap install docker
+<h2> Spurtcommerce port </h2>
 
-// Installs Docker Engine
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>-p 8080</code></td>
+<td>The port for the spurtcommerce api</td>
+</tr>
+<tr>
+<td align="center"><code>-p 400</code></td>
+<td>The port for the spurtcommerce Ui</td>
+</tr>
 
-Note: 	The web-ui Service in docker yaml is Configured in default port 80..
-      	Incase if any service is running in port 80..(ex: apache or nginx) in Your local system..
-	change the port configuration in the follow code in docker.yaml file
-	
-	....
-	web-ui:
-    	container_name: spurtcommerce-web-ui
-   	 image: spurtcommerce/spurt-web-ui:4.8.2
-    	depends_on:
-      	- spurtcommerce-api
-    	ports:
-      	- "{your-port}":80
-      	....
 
-Step 2: Run This Command for docker deployment
+</tbody>
+</table>
 
-$ sudo docker compose up
+Then SpurtCommerce Is Ready On localhost:{your-port} or default localhost/(hostname)
 
-executes compose.yaml file,
-Pulls api and Webpanel Docker Images
-And Automatically Containerized, Ports are configured.
 
------------------------------------------------------------------------
+<h2>Avilable Images</h2>
+Spurtcommerce maintains multiple build images for testing new development as well as supporting legacy builds. Each image uses a different version of Ubuntu Linux, with a slightly different list of included language and software versions.
+<br>The following image is currently available:
+<br>
+* <b> Marketplace API:</b> [https://www.spurtcommerce.com/](https://hub.docker.com/r/spurtcommerce/marketplace-api)
 
-Step 4: Wait for few mins for application to setup... Then SpurtCommerce Is Ready On localhost:{your-port} or default localhost/(hostname)
+* <b> Marketplace API:</b> [https://www.spurtcommerce.com/](https://hub.docker.com/r/spurtcommerce/marketplace-api)
+
+* <b> Marketplace API:</b> [https://www.spurtcommerce.com/](https://hub.docker.com/r/spurtcommerce/marketplace-api)
+
+
+<br>
+* Spurtcommerce API
+
+
