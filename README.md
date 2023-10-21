@@ -38,19 +38,16 @@ Your local Spurtcommerce setup is now running with each of the services occupyin
 <td>The port for the spurtcommerce api</td>
 </tr>
 <tr>
-<td align="center"><code>-p 400</code></td>
-<td>The port for the spurtcommerce Ui</td>
+<td align="center"><code>-p 4000</code></td>
+<td>The port for the chat Socket </td>
 </tr>
 
 <tr>
-<td align="center"><code>-p 400</code></td>
-<td>The port for the spurtcommerce Ui</td>
+<td align="center"><code>-p 80</code></td>
+<td>Angular Frontend - Admin , Vendor and Store</td>
 </tr>
 
-<tr>
-<td align="center"><code>-p 400</code></td>
-<td>The port for the spurtcommerce Ui</td>
-</tr>
+
 </tbody>
 </table>
 
