@@ -6,7 +6,7 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-    image: spurtcommerce/marketplace-api:4.8.2
+    image: spurtcommerce/marketplace-api:4.8.3
     env_file:
       - ./config/.env.dev
     ports:
@@ -15,11 +15,11 @@ services:
 
   mysql:
     container_name: mysql-database
-    image: spurtcommerce/database:4.8.2
+    image: spurtcommerce/database:4.8.3
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_DATABASE: "marketplace_482"
+      MYSQL_DATABASE: "spurtcommerce"
       MYSQL_ROOT_PASSWORD: "picco123$"
     healthcheck:
       test:
@@ -42,7 +42,7 @@ services:
   
   web-ui:
     container_name: spurtcommerce-web-ui
-    image: spurtcommerce/web-ui:4.8.2
+    image: spurtcommerce/web-ui:4.8.3
     depends_on:
       - spurtcommerce-api
     ports:
