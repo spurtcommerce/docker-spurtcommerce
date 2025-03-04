@@ -1,3 +1,4 @@
+name: spurtcommerce-community
 services:
 
   spurtcommerce-api:
@@ -6,7 +7,7 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-    image: spurtcommerce/marketplace-api:5.0.0
+    image: spurtcommerce/marketplace-api:5.1.0
     env_file:
       - ./config/.env.dev
     ports:
@@ -15,7 +16,7 @@ services:
 
   mysql:
     container_name: mysql-database
-    image: spurtcommerce/database:5.0.0
+    image: spurtcommerce/database:5.1.0
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -42,8 +43,8 @@ services:
   
   web-ui:
     container_name: spurtcommerce-web-ui
-    image: spurtcommerce/web-ui:5.0.0
+    image: spurtcommerce/web-ui:5.1.0
     depends_on:
       - spurtcommerce-api
     ports:
-      - 3000:80
+      - 3001:80

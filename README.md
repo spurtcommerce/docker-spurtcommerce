@@ -43,7 +43,7 @@ Your local Spurtcommerce setup is now running with each of the services occupyin
 </tr>
 </tr>
 <tr>
-<td align="center"><code>-p 3000</code></td>
+<td align="center"><code>-p 3000/seller</code></td>
 <td>Angular Frontend - Seller</td>
 </tr>
 
