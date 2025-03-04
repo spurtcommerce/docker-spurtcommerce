@@ -12,14 +12,20 @@ If you have not yet installed Docker in your local server, then follow this firs
   
 <h3>Step 1 :  </h3>
 
-<pre><code>git clone https://github.com/spurtcommerce/docker-spurtcommerce.git
-cd docker-spurtcommerce</code></pre>
+<pre><code>
+git clone https://github.com/spurtcommerce/docker-spurtcommerce.git && cd docker-spurtcommerce
+</code></pre>
 
 Having already built the Docker images you can run docker compose command
 
 <h3>Step 2 : </h3>
-<pre><code>docker compose up</code></pre>
-<br>
+<pre><code>
+docker compose up
+</code></pre>
+<p>If the above command gives an error, try running it with <code>sudo</code>:</p>
+<pre><code>
+sudo docker compose up
+</code></pre>
 
 
 <h2> Spurtcommerce port </h2>
@@ -39,12 +45,12 @@ Your local Spurtcommerce setup is now running with each of the services occupyin
 <td>The port for the spurtcommerce api</td>
 </tr>
 <tr>
-<td align="center"><code>-p 3000/admin</code></td>
+<td align="center"><code>-p 3001/admin</code></td>
 <td>Angular Frontend - Admin</td>
 </tr>
 </tr>
 <tr>
-<td align="center"><code>-p 3000/seller</code></td>
+<td align="center"><code>-p 3001/seller</code></td>
 <td>Angular Frontend - Seller</td>
 </tr>
 
