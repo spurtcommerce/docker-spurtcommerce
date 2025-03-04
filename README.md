@@ -8,16 +8,16 @@ Additionally, you should have <code> docker </code> and <code> docker-compose </
 
 If you have not yet installed Docker in your local server, then follow this first step. <br><br>
 
-<pre><code> $ sudo snap install docker </code></pre>
+<pre><code>sudo snap install docker</code></pre>
   
 <h3>Step 1 :  </h3>
 
-<pre><code> $ git clone https://github.com/spurtcommerce/docker-spurtcommerce.git </code></pre><br>
+<pre><code>git clone https://github.com/spurtcommerce/docker-spurtcommerce.git</code></pre><br>
 
 Having already built the Docker images you can run docker compose without the --build flag.
 
 <h3>Step 2 : </h3>
-<pre><code> $ sudo docker compose up </code></pre>
+<pre><code>docker compose up</code></pre>
 <br>
 
 
