@@ -54,7 +54,7 @@ Your local Spurtcommerce setup is now running with each of the services occupyin
 Then SpurtCommerce Is Ready On localhost:{your-port} or default localhost/(hostname)
 
 
-<h2>Avilable Images</h2>
+<h2>Available Images</h2>
 
 Spurtcommerce maintains multiple build images for testing new development as well as supporting legacy builds. Each image uses a different version of Ubuntu Linux, with a slightly different list of included language and software versions.
 <br>The following image is currently available:
