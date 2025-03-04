@@ -58,8 +58,7 @@ Your local Spurtcommerce setup is now running with each of the services occupyin
 </tbody>
 </table>
 
-Then SpurtCommerce Is Ready On localhost:{your-port} or default localhost/(hostname)
-
+Then SpurtCommerce Is Ready On localhost:3001/seller and localhost:3001/admin
 
 <h2>Available Images</h2>
 
