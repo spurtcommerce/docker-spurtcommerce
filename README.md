@@ -12,9 +12,10 @@ If you have not yet installed Docker in your local server, then follow this firs
   
 <h3>Step 1 :  </h3>
 
-<pre><code>git clone https://github.com/spurtcommerce/docker-spurtcommerce.git</code></pre><br>
+<pre><code>git clone https://github.com/spurtcommerce/docker-spurtcommerce.git
+cd docker-spurtcommerce</code></pre>
 
-Having already built the Docker images you can run docker compose without the --build flag.
+Having already built the Docker images you can run docker compose command
 
 <h3>Step 2 : </h3>
 <pre><code>docker compose up</code></pre>
