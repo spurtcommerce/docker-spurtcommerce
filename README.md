@@ -70,6 +70,4 @@ Spurtcommerce maintains multiple build images for testing new development as wel
 
 <br>
 
-Should you require any premium support, feel free to write to support@spurtcommerce.com. 
-
-
+If you require any premium support, feel free to write to support@spurtcommerce.com. 
