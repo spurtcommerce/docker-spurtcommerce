@@ -34,7 +34,7 @@ services:
           '3306',
           '-u',
           'root',
-          '-p$picco123$'
+          '-ppicco123$'
         ]
       timeout: 20s
       retries: 15
