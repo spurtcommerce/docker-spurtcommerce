@@ -1,50 +1,92 @@
 name: spurtcommerce-community
-services:
 
+services:
+  # --------------------
+  # API SERVICE
+  # --------------------
   spurtcommerce-api:
-    container_name: spurtcommerce-api-app
+    container_name: spurtcommerce-api
+    image: spurtcommerce/community-api:5.3
     restart: always
     depends_on:
       mysql:
         condition: service_healthy
-    image: spurtcommerce/marketplace-api:5.1.0
     env_file:
-      - ./config/.env.dev
+      - ./config/api/.env
     ports:
-      - 8000:8000
-      - 4001:4001
+      - "8000:8000"
+      - "4001:4001"
 
+  # --------------------
+  # MYSQL DATABASE
+  # --------------------
   mysql:
     container_name: mysql-database
-    image: spurtcommerce/database:5.1.0
+    image: spurtcommerce/community-database:5.3
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_DATABASE: "spurtcommerce"
+      MYSQL_DATABASE: spurtcommerce
       MYSQL_ROOT_PASSWORD: "picco123$"
     healthcheck:
       test:
         [
           "CMD",
-          'mysqladmin',
-          'ping',
-          '-h',
-          '127.0.0.1',
-          '-P',
-          '3306',
-          '-u',
-          'root',
-          '-p$picco123$'
+          "mysqladmin",
+          "ping",
+          "-h",
+          "127.0.0.1",
+          "-P",
+          "3306",
+          "-u",
+          "root",
+          "-p$picco123$"
         ]
-      timeout: 20s
-      retries: 15
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 40s
     ports:
-      - 3307:3306
-  
-  web-ui:
-    container_name: spurtcommerce-web-ui
-    image: spurtcommerce/web-ui:5.1.0
+      - "3307:3306"
+
+  # --------------------
+  # ADMIN UI
+  # --------------------
+  admin-ui:
+    container_name: spurtcommerce-admin-ui
+    image: spurtcommerce/community-admin:5.3
+    restart: always
     depends_on:
       - spurtcommerce-api
+    env_file:
+      - ./config/admin/.env
     ports:
-      - 3001:80
+      - "3001:80"
+
+  # --------------------
+  # SELLER UI
+  # --------------------
+  seller-ui:
+    container_name: spurtcommerce-seller-ui
+    image: spurtcommerce/community-seller:5.3
+    restart: always
+    depends_on:
+      - spurtcommerce-api
+    env_file:
+      - ./config/seller/.env
+    ports:
+      - "3002:80"
+
+  # --------------------
+  # STORE UI
+  # --------------------
+  store-ui:
+    container_name: spurtcommerce-store-ui
+    image: spurtcommerce/community-store:5.3
+    restart: always
+    depends_on:
+      - spurtcommerce-api
+    env_file:
+      - ./config/store/.env
+    ports:
+      - "3000:3000"
