@@ -1,4 +1,4 @@
-# SpurtCommerce (docker-spurtcommerce)
+# Spurtcommerce Community v5.3
 
 A brief guide to this workspace, environment files, and how to install and run SpurtCommerce using Docker Compose.
 
